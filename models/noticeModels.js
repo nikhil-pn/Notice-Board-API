@@ -14,7 +14,7 @@ const Notice = createDB.define(
     message: DataTypes.STRING,
     date: DataTypes.STRING,
     likes: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       defaultValue: 0,
     },
   },
