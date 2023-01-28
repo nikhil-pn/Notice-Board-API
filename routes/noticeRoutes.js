@@ -32,7 +32,7 @@ router.get("/notice/:id", async (req, res) => {
 
 router.post("/notice", async (req, res) => {
   try {
-    const { author, message } = req.body;
+    const { author, message, date, likes } = req.body;
 
     if (!author ) {
       return res
@@ -47,7 +47,9 @@ router.post("/notice", async (req, res) => {
 
     const todo = {
       author,
-      message
+      message,
+      date,
+      likes
     };
     const createdTodo = await Notice.create(todo);
 
