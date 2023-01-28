@@ -34,11 +34,16 @@ router.post("/notice", async (req, res) => {
   try {
     const { author, message } = req.body;
 
-    // if (!author && !message) {
-    //   return res
-    //     .status(400)
-    //     .json({ result: "Title Missing Please input a title " });
-    // }
+    if (!author ) {
+      return res
+        .status(400)
+        .json({ result: "Title Missing Please input a title " });
+    }
+    if (!message) {
+      return res
+        .status(400)
+        .json({ result: "Title Missing Please input a title " });
+    }
 
     const todo = {
       author,
