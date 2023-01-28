@@ -49,6 +49,7 @@ router.post("/notice", async (req, res) => {
     // const dateNow = "48988"
     // const dateString = stringify(dateNow)
     // console.log(typeof(dateString),  "dateNow", dateString);
+    //project complete add date .ne() in date
 
     const todo = {
       author,
