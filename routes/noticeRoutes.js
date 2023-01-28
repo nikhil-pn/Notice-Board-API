@@ -33,29 +33,30 @@ router.get("/notice/:id", async (req, res) => {
 router.post("/notice", async (req, res) => {
   try {
     const { author, message, date, likes } = req.body;
-
+    
     if (!author ) {
-      return res
+        return res
         .status(400)
         .json({ result: "Title Missing Please input a title " });
     }
     if (!message) {
-      return res
+        return res
         .status(400)
         .json({ result: "Title Missing Please input a title " });
     }
-
+    
     const todo = {
-      author,
-      message,
-      date,
-      likes
+        author,
+        message,
+        date,
+        likes
     };
     const createdTodo = await Notice.create(todo);
-
+    
     if (createdTodo) {
-      return res.status(201).send(createdTodo);
+        return res.status(201).send(createdTodo);
     }
+    console.log("reached here");
   } catch (error) {
     return res.status(500).json({ err: error });
   }
